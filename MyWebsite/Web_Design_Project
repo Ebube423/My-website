@@ -1,0 +1,63 @@
+Simple Web page Using Bootstrap and Material-UI 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap vs Material UI</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- React + ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Material UI -->
+  <script src="https://unpkg.com/@mui/material@5/umd/material-ui.development.js"></script>
+
+</head>
+<body>
+
+<div class="container mt-5">
+
+  <h1 class="text-center mb-4">Bootstrap vs Material UI Demo</h1>
+
+  <!-- Bootstrap Section -->
+  <div class="card p-4 mb-5">
+    <h3>Bootstrap Example</h3>
+    <p>This section uses Bootstrap classes.</p>
+
+    <button class="btn btn-primary">Bootstrap Button</button>
+
+    <div class="alert alert-success mt-3">
+      This is a Bootstrap alert box.
+    </div>
+  </div>
+
+  <!-- Material UI Section -->
+  <div id="mui-root"></div>
+
+</div>
+
+<script>
+const { Button, Alert } = MaterialUI;
+
+function App() {
+  return React.createElement("div", {style:{padding:"20px",border:"1px solid #ccc"}},
+    React.createElement("h3", null, "Material UI Example"),
+    React.createElement("p", null, "This section uses Material UI React components."),
+    React.createElement(Button, {variant:"contained"}, "Material UI Button"),
+    React.createElement("div",{style:{marginTop:"15px"}},
+      React.createElement(Alert,{severity:"success"},"This is a Material UI alert")
+    )
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("mui-root")).render(
+  React.createElement(App)
+);
+</script>
+
+</body>
+</html>
